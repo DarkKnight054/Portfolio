@@ -127,9 +127,12 @@ svg {
   margin: 0;
 }
 
+/* General social links styling */
 #header .social-links {
   margin-top: 40px;
   display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* Allows wrapping if space is limited */
 }
 
 #header .social-links a {
@@ -140,7 +143,7 @@ svg {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   line-height: 1;
-  margin-right: 8px;
+  margin: 5px;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -150,21 +153,45 @@ svg {
   background: #12d640;
 }
 
-@media (max-width: 992px) {
-  #header h1 {
-    font-size: 36px;
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+  #header .social-links a {
+    font-size: 14px;
+    width: 35px;
+    height: 35px;
   }
-  #header h2 {
-    font-size: 20px;
-    line-height: 30px;
-  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 576px) {
   #header .social-links {
     margin-top: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
+
+  #header .social-links a {
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+  }
+
+  /* Centering content for small screens */
   #header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  #header h1 {
+    font-size: 28px;
+  }
+
+  #header h2 {
+    font-size: 18px;
+    line-height: 26px;
   }
 }
 
@@ -1154,14 +1181,10 @@ section .container {
     transform: translateX(-50%);
   }
 }
-.awards {
-  padding: 3px 0;
-  background-color: #f9f9f9;
-}
 
 .certificate-box {
-  background-color: #fff;
-  padding: 20px;
+  background-color: #09203a;
+  padding: 5px;
   border-radius: 8px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
@@ -1214,3 +1237,30 @@ section .container {
     margin-bottom: 10px;
   }
 }
+.degree-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.degree-section h5 {
+  margin: 0; /* Ensure no extra spacing around the heading */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.degree-section .cgpa {
+  font-weight: bold;
+}
+
+/* Additional styling for better alignment */
+.degree-section h5 em {
+  flex: 1; /* Take up available space */
+}
+
+/* .degree-section h5 strong {
+  flex: 0; /* Prevent the CGPA from stretching */
+} */
